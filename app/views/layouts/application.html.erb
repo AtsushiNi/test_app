@@ -4,17 +4,30 @@
   <meta charset="UTF-8" >
   <title>Rails Camp Blog</title>
   <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 </head>
 
 <body>
+  <% if flash.any? %>
+  <p class="alert">Not yours</p>
+  <% end %>
   <header>
     <p id="logo"><a href="/posts">RailsCamp<span>Blog</span></a></p>
     <nav>
       <ul>
         <li><%= link_to "トップ", posts_path %></li>
-        <li><a href="">新規登録</a></li>
+        <% if user_signed_in? %>
+        <li><%= link_to "新規投稿", new_post_path %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to "新規登録", new_user_registration_path %></li>
+        <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
         <div class="clear"></div>
       </ul>
     </nav>

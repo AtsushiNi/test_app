@@ -161,3 +161,10 @@
  div#content h2{
    margin: 20px 0;
  }
+.alert {
+  text-align: center;
+  padding: 20px;
+  background: lightcoral;
+  font-size: bold;
+  color: #FFF;
+}

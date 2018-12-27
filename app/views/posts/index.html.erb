@@ -8,6 +8,10 @@
     <div>
       <h2><%= link_to post.title, post %></h2>
       <p><%= post.updated_at %></p>
+      <% if user_signed_in? %>
+      <%= link_to "編集", edit_post_path(post) %>
+      <%= link_to "削除", post, method: :delete %>
+      <% end %>
     </div>
     <% end %>
 
