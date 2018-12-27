@@ -149,6 +149,11 @@
    padding-top: 60px;
  }
 
+div#title div {
+width: 1000px;
+margin: 0 auto;  
+}
+
  div#title h1 {
    font-size: 30px;
  }

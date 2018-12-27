@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    REDIS.zrem("posts", @post.id)
     @post.destroy
     redirect_to posts_path
   end

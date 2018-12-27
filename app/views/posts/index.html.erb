@@ -21,9 +21,12 @@
     <h2>★pv数ランキング</h2>
     <ul>
       <% ranking = Post.most_popular %>
-      <% ranking.each do |i| %>
-      <% post = Post.find(i) %>
-      <li><%=link_to post.title, post %></li>
+      <% ranking.each do |id, score| %>
+      <% post = Post.find(id) %>
+      <li>
+        <%=link_to post.title, post %>
+        <span><%= "(" + score.to_i.to_s + "PV)" %></span>
+      </li>
       <% end %>
     </ul>
   </div>
