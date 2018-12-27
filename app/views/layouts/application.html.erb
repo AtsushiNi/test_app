@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <% if flash.any? %>
+  <% if flash[:alert].present? %>
   <p class="alert">Not yours</p>
   <% end %>
   <header>
