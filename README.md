@@ -53,8 +53,8 @@ https://serverlessrepo.aws.amazon.com/applicati
   ```sh
   aws configure
   ```
-  Access Key等はsalesの.env参照
-  region: ap-northeast-1
+  Access Key等はsalesの.env参照  
+  region: ap-northeast-1  
   output: json
 
 ### docker networkの設定
